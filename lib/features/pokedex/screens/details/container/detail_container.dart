@@ -7,8 +7,8 @@ import 'package:pokedex2flutter/common/widgets/po_loading.dart';
 import 'package:pokedex2flutter/features/pokedex/screens/details/pages/detail_page.dart';
 
 class DetailArguments {
-  DetailArguments({required this.name});
-  final String name;
+  DetailArguments({required this.pokemon});
+  final Pokemon pokemon;
 }
 
 class DetailContainer extends StatelessWidget {
@@ -28,7 +28,7 @@ class DetailContainer extends StatelessWidget {
 
           if (snaphot.connectionState == ConnectionState.done &&
               snaphot.hasData) {
-            return DetailPage(name: arguments.name, list: snaphot.data!);
+            return DetailPage(pokemon: arguments.pokemon, list: snaphot.data!);
           }
 
           if (snaphot.hasError) {
